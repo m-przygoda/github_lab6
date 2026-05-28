@@ -34,7 +34,8 @@ displayArticles();
 
 const formularz = document.getElementById('formularz')
 formularz.addEventListener("submit", (event) => {
-   const data = {
+    event.preventDefault();
+    const data = {
     title: document.getElementById('tytul').value,
     subtitle: document.getElementById('podtytul').value,
     author: document.getElementById('autor').value,
@@ -56,7 +57,8 @@ formularz.addEventListener("submit", (event) => {
      }
  } catch (error) {
  console.error('Fetch error:' , error);
- }
-};
-}
+    }
+    };
+    createNewArticle(data);
+    }
 )
