@@ -14,20 +14,20 @@ const fetchArticles = async () => {
  }
 };
 
-
 const displayArticles = async () => {
     const artykuly = await fetchArticles();
     const wyswietlanie = document.getElementById('wyswietlanie');
     artykuly.forEach(artykul => {
         const wa = document.createElement('div');
         wa.innerHTML = `
-        <h1>${artykul.title}</h1>
-        <h2>${artykul.subtitle}</h2>
-        <h3>${artykul.author}</h3>
-        <h4>${artykul.created_at}</h4>
+        <h2>${artykul.title}</h2>
+        <h3>${artykul.subtitle}</h3>
+        <h4>${artykul.author}</h4>
+        <h5>${artykul.created_at}</h5>
         <p>${artykul.content}</p>
         `;
         wyswietlanie.appendChild(wa);
     });
 };
+
 displayArticles();
