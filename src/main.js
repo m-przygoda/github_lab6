@@ -34,6 +34,7 @@ displayArticles();
 
 const formularz = document.getElementById('formularz')
 formularz.addEventListener("submit", (event) => {
+    event.preventDefault();
     const data = {
     title: document.getElementById('tytul').value,
     subtitle: document.getElementById('podtytul').value,

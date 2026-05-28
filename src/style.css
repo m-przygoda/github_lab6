@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+h2{
+  @apply font-bold text-xl
+}
