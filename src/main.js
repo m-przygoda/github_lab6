@@ -1,14 +1,14 @@
 const fetchArticles = async () => {
  try {
- const response = await fetch(
- "https://piwvqmsaiayahfjipzet.supabase.co/rest/v1/article?select=*", {
- headers: {
- apiKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBpd3ZxbXNhaWF5YWhmamlwemV0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk3MTc3MzQsImV4cCI6MjA5NTI5MzczNH0.yy6TuHrE30QWtyzfbG0P4OZZ0PYttm4wQBd15KrZvxg",
- },
- });
- const data = await response.json();
- console.log(data);
- return data;
+    const response = await fetch(
+        "https://piwvqmsaiayahfjipzet.supabase.co/rest/v1/article?select=*", {
+        headers: {
+            apiKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBpd3ZxbXNhaWF5YWhmamlwemV0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk3MTc3MzQsImV4cCI6MjA5NTI5MzczNH0.yy6TuHrE30QWtyzfbG0P4OZZ0PYttm4wQBd15KrZvxg",
+        },
+    });
+    const data = await response.json();
+    console.log(data);
+    return data;
  } catch (error) {
  console.error('Fetch error:', error);
  }
@@ -31,3 +31,32 @@ const displayArticles = async () => {
 };
 
 displayArticles();
+
+const formularz = document.getElementById('formularz')
+formularz.addEventListener("submit", (event) => {
+   const data = {
+    title: document.getElementById('tytul').value,
+    subtitle: document.getElementById('podtytul').value,
+    author: document.getElementById('autor').value,
+    content: document.getElementById('tresc').value
+    };
+    const createNewArticle = async (data) => {
+ try {
+    const response = await fetch("https://piwvqmsaiayahfjipzet.supabase.co/rest/v1/article?select=*", {
+        method: 'POST',
+        headers: {
+            apiKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBpd3ZxbXNhaWF5YWhmamlwemV0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk3MTc3MzQsImV4cCI6MjA5NTI5MzczNH0.yy6TuHrE30QWtyzfbG0P4OZZ0PYttm4wQBd15KrZvxg",
+            'Content-Type' : 'application/json' ,
+        },
+        body: JSON.stringify({ data }),
+    });
+
+    if (response.status !== 201) {
+        throw new Error(`Status: ${response.status}`);
+     }
+ } catch (error) {
+ console.error('Fetch error:' , error);
+ }
+};
+}
+)
