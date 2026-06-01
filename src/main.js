@@ -1,6 +1,4 @@
 import dayjs from 'dayjs';
-var customParseFormat = require("dayjs/plugin/customParseFormat");
-dayjs.extend(customParseFormat);
 
 const fetchArticles = async () => {
  try {
@@ -27,7 +25,7 @@ const displayArticles = async () => {
         <h2>${artykul.title}</h2>
         <h3>${artykul.subtitle}</h3>
         <h4>${artykul.author}</h4>
-        <h5>${dayjs(artykul.created_at, "DD-MM-YYYY")}</h5>
+        <h5>${dayjs(artykul.created_at).format("DD-MM-YYYY")}</h5>
         <p>${artykul.content}</p>
         `;
         wyswietlanie.appendChild(wa);
