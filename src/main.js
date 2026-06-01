@@ -47,7 +47,8 @@ formularz.addEventListener("submit", (event) => {
     title: document.getElementById('tytul').value,
     subtitle: document.getElementById('podtytul').value,
     author: document.getElementById('autor').value,
-    content: document.getElementById('tresc').value
+    content: document.getElementById('tresc').value,
+    created_at: dayjs(document.getElementById('data').value)
     };
     const createNewArticle = async (data) => {
  try {
