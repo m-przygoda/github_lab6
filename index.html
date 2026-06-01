@@ -5,29 +5,30 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>lab_6_projekt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <label for="sort">Sortowanie</label>
-    <select id="sort">
-      <option value="created_at.asc">Data rosnąco</option>
-      <option value="created_at.desc">Data malejąco</option>
-      <option value="title.asc">Tytuł alfabetycznie</option>
-    </select>
+    <label for="sort" class="text-2xl font-bold text-red-500">Sortowanie</label> <br>
+    <select id="sort" class="text-xs font-light text-red-900">
+      <option value="created_at.asc" class="text-xs font-light text-red-900">Data rosnąco</option>
+      <option value="created_at.desc" class="text-xs font-light text-red-900">Data malejąco</option>
+      <option value="title.asc" class="text-xs font-light text-red-900">Tytuł alfabetycznie</option>
+    </select> <br> <br>
     <div id="app"></div>
     <div id="wyswietlanie"></div>
-    <h2>Dodaj artykuł</h2>
+    <h2 class="text-2xl font-bold text-blue-500">Dodaj artykuł</h2>
     <form id = "formularz">
-    <label for="tytul">Tytuł</label>
+    <label for="tytul" class="text-sm font-light italic text-blue-800">Tytuł</label>
     <input type="text" id="tytul"> <br> <br>
-    <label for="podtytul">Podtytuł</label>
+    <label for="podtytul" class="text-sm font-light italic text-blue-800">Podtytuł</label>
     <input type="text" id="podtytul"> <br> <br>
-    <label for="autor">Autor</label>
+    <label for="autor" class="text-sm font-light italic text-blue-800">Autor</label>
     <input type="text" id="autor"> <br> <br>
-    <label for="data">Data</label>
+    <label for="data" class="text-sm font-light italic text-blue-800">Data</label>
     <input type="date" id="data"> <br> <br>
-    <label for="tresc">Treść</label>
+    <label for="tresc" class="text-sm font-light italic text-blue-800">Treść</label>
     <textarea id="tresc"></textarea> <br> <br>
-    <button type="submit" id="submit">Dodaj</button>
+    <button type="submit" id="submit" class="bg-yellow-500 rounded text-white hover:bg-green-500">Dodaj</button>
     </form>
     <script type="module" src="/src/main.js"></script>
   </body>

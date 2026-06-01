@@ -23,11 +23,11 @@ const displayArticles = async (rs) => {
     artykuly.forEach(artykul => {
         const wa = document.createElement('div');
         wa.innerHTML = `
-        <h2>${artykul.title}</h2>
-        <h3>${artykul.subtitle}</h3>
-        <h4>${artykul.author}</h4>
-        <h5>${dayjs(artykul.created_at).format("DD-MM-YYYY")}</h5>
-        <p>${artykul.content}</p>
+        <h2 class="text-2xl font-bold text-purple-700">${artykul.title}</h2>
+        <h3 class="text-xl font-bold text-purple-500" italic>${artykul.subtitle}</h3>
+        <h4 class="text-lg font-bold text-purple-500" italic>${artykul.author}</h4>
+        <h5 class="text-xs font-bold decoration-dotted text-purple-500">${dayjs(artykul.created_at).format("DD-MM-YYYY")}</h5>
+        <p class="text-xs text-purple-500" tracking-wider>${artykul.content}</p>
         `;
         wyswietlanie.appendChild(wa);
     });
